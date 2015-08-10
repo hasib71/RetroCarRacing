@@ -13,8 +13,8 @@ public class Main {
 		
 		window.add(gb);
 		
-		window.setSize(Settings.WINDOW_HEIGHT, Settings.WINDOW_WIDTH);
-		window.setLocationRelativeTo(null);
+		window.setSize(Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT);
+		window.setLocation(50, 50);
 		window.setTitle(Settings.GAME_TITLE);
 		window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		window.setVisible(true);
