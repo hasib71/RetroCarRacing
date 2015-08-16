@@ -5,10 +5,12 @@ public class Settings {
 			BACKGROUN_IMAGE_PATH = "assets/images/background.png";
 	public static final int WINDOW_HEIGHT = 400,
 			WINDOW_WIDTH = 300,
-			CAR_HEIGHT = 25,
-			CAR_WIDTH = 50,
-			LEFT_X = 25,
-			RIGHT_X = WINDOW_WIDTH - 25 - CAR_WIDTH;
+			CAR_HEIGHT = 83,
+			CAR_WIDTH = 63,
+			LEFT_X = 50,
+			RIGHT_X = WINDOW_WIDTH - 50 - CAR_WIDTH,
+			GAP_BETWEEN_CARS = 83,
+			TOTAL_TRAFIC = 5;
 
 	
 }
