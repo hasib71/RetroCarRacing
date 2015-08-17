@@ -1,5 +1,6 @@
 package com.sadakhata.retrocarracing;
 
+import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -23,6 +24,8 @@ public class GameBoard extends JPanel implements KeyListener {
 	public GameBoard(GameWindow gameWindow)
 	{
 		super();
+		
+		this.setPreferredSize(new Dimension(Settings.WINDOW_WIDTH, Settings.WINDOW_HEIGHT));
 		
 		this.gameWindow = gameWindow;
 		
@@ -71,9 +74,6 @@ public class GameBoard extends JPanel implements KeyListener {
 		gameWindow.dispose();
 		gameWindow = new GameWindow();
 	}
-	
-	
-	
 	
 	
 
