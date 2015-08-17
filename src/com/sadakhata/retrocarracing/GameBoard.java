@@ -9,15 +9,27 @@ import javax.swing.JPanel;
 
 public class GameBoard extends JPanel implements KeyListener {
 	
+	GameWindow gameWindow;
+	
+	
 	Car user = new Car(Settings.LEFT_X, Settings.WINDOW_HEIGHT - Settings.CAR_HEIGHT);
 	
 	Car[] otherCars = new Car[Settings.TOTAL_TRAFIC];
 	
 	Traffic traffic;
 	
-	public GameBoard()
+	boolean isCrashed;
+	
+	public GameBoard(GameWindow gameWindow)
 	{
 		super();
+		
+		
+		// debug
+		
+		System.out.println("User car's y = " + user.getY());
+		
+		this.gameWindow = gameWindow;
 		
 		for(int i=0; i<otherCars.length; i++)
 		{
@@ -31,12 +43,14 @@ public class GameBoard extends JPanel implements KeyListener {
 			{
 				otherCars[i].moveRight();
 			}
-			
 		}
+		
+		this.isCrashed = false;
 		
 		traffic = new Traffic(otherCars, user, this);
 		
 		traffic.start();
+		
 		
 		addKeyListener(this);
 		setFocusable(true);
@@ -56,10 +70,26 @@ public class GameBoard extends JPanel implements KeyListener {
 	
 	
 	
+	public void restartGame()
+	{
+		this.removeKeyListener(this);
+		gameWindow.dispose();
+		gameWindow = new GameWindow();
+	}
+	
+	
+	
+	
+	
 
 	@Override
 	public void keyPressed(KeyEvent event) {
 		// TODO Auto-generated method stub
+		
+		if(isCrashed){
+			System.out.println("returning " + isCrashed);
+			return;
+		}
 		
 		if(event.getKeyCode() == event.VK_LEFT)
 		{
