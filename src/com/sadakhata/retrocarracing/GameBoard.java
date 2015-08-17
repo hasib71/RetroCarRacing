@@ -24,11 +24,6 @@ public class GameBoard extends JPanel implements KeyListener {
 	{
 		super();
 		
-		
-		// debug
-		
-		System.out.println("User car's y = " + user.getY());
-		
 		this.gameWindow = gameWindow;
 		
 		for(int i=0; i<otherCars.length; i++)
@@ -83,8 +78,8 @@ public class GameBoard extends JPanel implements KeyListener {
 	
 
 	@Override
-	public void keyPressed(KeyEvent event) {
-		// TODO Auto-generated method stub
+	public void keyPressed(KeyEvent event)
+	{
 		
 		if(isCrashed){
 			System.out.println("returning " + isCrashed);
