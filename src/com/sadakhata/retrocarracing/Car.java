@@ -5,7 +5,7 @@ import javax.swing.ImageIcon;
 
 public class Car {
 	
-	private String imagePath = "assets/images/retroCar.png";
+	private String imagePath = "assets/images/retroCar2.png";
 	
 	private int posX, posY;
 	

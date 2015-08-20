@@ -1,6 +1,7 @@
 package com.sadakhata.retrocarracing;
 
 import java.awt.Dimension;
+import java.awt.Font;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -64,6 +65,10 @@ public class GameBoard extends JPanel implements KeyListener {
 		{
 			otherCars[i].draw(g);
 		}
+		
+		g.setFont(new Font("default", Font.BOLD, 16));
+		
+		g.drawString("Score: " + traffic.getScore(), 105, 20);
 	}
 	
 	
@@ -82,7 +87,6 @@ public class GameBoard extends JPanel implements KeyListener {
 	{
 		
 		if(isCrashed){
-			System.out.println("returning " + isCrashed);
 			return;
 		}
 		

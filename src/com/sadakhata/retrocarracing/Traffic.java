@@ -55,7 +55,7 @@ public class Traffic extends Thread {
 			if(checkCollision())
 			{
 				board.isCrashed = true;
-				JOptionPane.showMessageDialog(null, "Game Over. Your point is " + points );
+				JOptionPane.showMessageDialog(null, "Game Over. Your score is " + points );
 				board.restartGame();
 				break;
 			}
@@ -75,6 +75,24 @@ public class Traffic extends Thread {
 		}
 	}
 	
+	
+	public int getScore()
+	{
+		return this.points;
+	}
+	
+	public int getExtraSpaceNeeded()
+	{
+		int speedLevel = this.points / 10;
+
+		if(speedLevel >= 5)
+		{
+			speedLevel = 6;
+		}
+
+		return speedLevel * 10;
+	}
+
 	
 	public boolean checkCollision()
 	{
